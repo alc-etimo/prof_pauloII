@@ -1,0 +1,1171 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso 1: Do Contato Linguístico à Ética em IA - Portfólio Prof. Márcia</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-light: #e8f0f8;
+            --accent: #2c5282;
+            --accent-light: #4a90e2;
+            --danger: #c53030;
+            --success: #2f855a;
+            --border: #cbd5e0;
+            --border-light: #e2e8f0;
+            --card: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            font-size: 10.5pt;
+        }
+        
+        /* CABEÇALHO DO CASO 1 */
+        .case-header {
+            text-align: center;
+            border-bottom: 4px solid #003366;
+            padding-bottom: 20pt;
+            margin-bottom: 25pt;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20pt;
+            border-radius: 8px;
+        }
+        
+        .case-number {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5pt;
+        }
+        
+        .case-header h1 {
+            font-size: 18pt;
+            color: #003366;
+            margin-bottom: 2pt;
+            text-transform: none;
+            letter-spacing: normal;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .case-subtitle {
+            font-size: 12pt;
+            color: #003366;
+            font-weight: 600;
+            margin-bottom: 15pt;
+            font-style: italic;
+        }
+        
+        .case-tags {
+            margin-top: 15pt;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6pt;
+        }
+        
+        .case-tag {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            padding: 4pt 10pt;
+            border-radius: 5px;
+            font-size: 9.5pt;
+            font-weight: bold;
+            margin-right: 0;
+            margin-bottom: 8pt;
+        }
+        
+        /* RESEARCH STATEMENT */
+        .research-statement {
+            background: #f9f9f9;
+            padding: 15pt;
+            border-left: 4px solid #003366;
+            font-style: italic;
+            margin-bottom: 20pt;
+            text-align: justify;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        /* SEÇÕES E TÍTULOS */
+        section {
+            margin-bottom: 30pt;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 5pt;
+            margin-bottom: 15pt;
+            text-transform: uppercase;
+            letter-spacing: 0.8pt;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #003366;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            border-left: 5px solid #003366;
+            padding-left: 10pt;
+        }
+        
+        /* CARDS GRID - PARA O VIÉS INTERPRETATIVO EM CASCATA */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .bias-card {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .bias-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .bias-card h4 {
+            color: #003366;
+            font-size: 11pt;
+            margin-bottom: 8pt;
+            font-weight: bold;
+        }
+        
+        /* DOIS BOXES LADO A LADO */
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20pt;
+            margin: 20pt 0;
+        }
+        
+        .problem-box, .solution-box {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;	    
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .problem-box h3, .solution-box h3 {
+            text-align: center;
+            margin-top: 3pt;
+            border: none;
+            padding-left: 0;
+            color: #003366;
+            margin-bottom: 12pt;
+            padding-bottom: 8pt;
+            border-bottom: 1px solid #003366;
+        }
+
+        /* CLICK HINT */
+        .click-hint {
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 9pt; 
+            color: var(--accent); 
+            margin-bottom: 8pt; 
+            font-style: italic;
+        }
+        
+        .hand-icon { 
+    width: 18px; 
+    height: 18px;
+transform: rotate(-180deg);
+    fill: var(--accent); 
+    margin: 0 2px;
+}
+
+.hand-icon.left { 
+    transform: rotate(90deg); 
+}
+
+.hand-icon.right { 
+    transform: rotate(-90deg); 
+}
+
+.click-hint .arrows-container {
+    display: flex;
+    align-items: center;
+    margin: 0 6px;
+}
+
+         
+        /* RELATOS DOS OPERADORES */
+        .operator-complaints {
+            background: #fff5f5;
+            border: 2px solid var(--danger);
+            border-radius: 8px;
+            padding: 20pt;
+            margin: 20pt 0;
+        }
+        
+        .complaint-title {
+            font-weight: bold;
+            color: var(--danger);
+            margin-bottom: 15pt;
+            text-align: center;
+            font-size: 11pt;
+        }
+        
+        .complaint-images {
+            display: flex;
+            flex-direction: column;
+            gap: 10pt;
+            margin-top: 15pt;
+        }
+        
+        .img-placeholder {
+            
+            border: 2px dashed #999;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 9pt;
+            padding: 5pt;
+        }
+        
+        /* TEORIA */
+        .theory-highlight {
+            background: #e3f2fd;
+            border-left: 5px solid #003366;
+            padding: 15pt;
+            margin: 20pt 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        
+        /* INTERATIVIDADE: ANTES/ANÁLISE/DEPOIS */
+        .interactive-rewrite {
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20pt 0;
+            background: var(--card);
+        }
+        
+        .tab-nav { 
+            display: flex; 
+            background: var(--primary-light); 
+            border-bottom: 1px solid var(--border); 
+        }
+        
+        .tab-btn { 
+            flex: 1; 
+            padding: 10pt; 
+            border: none; 
+            background: none; 
+            cursor: pointer; 
+            font-weight: bold; 
+            color: var(--primary); 
+            transition: 0.3s; 
+            font-size: 10pt;
+        }
+        
+        .tab-btn.active { 
+            background: var(--primary); 
+            color: white; 
+        }
+        
+        .tab-content { 
+            padding: 15pt; 
+            display: none; 
+        }
+        
+        .tab-content.active { 
+            display: block; 
+        }
+        
+        .analysis-box {
+            background: #fff; 
+            border: 1px solid var(--border);
+            padding: 12pt; 
+            border-radius: 6px; 
+            margin-top: 10pt;
+        }
+        
+        .analysis-box h4 { 
+            font-size: 10pt; 
+            text-transform: uppercase; 
+            color: var(--accent); 
+            margin-bottom: 8pt;
+            padding-bottom: 4pt;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        ul.analysis-list { 
+            margin-left: 0;
+            margin-top: 0;
+        }
+        
+        ul.analysis-list li { 
+            margin-bottom: 12pt;
+            font-size: 10pt; 
+            list-style: none;
+            padding-left: 15pt;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        ul.analysis-list li::before { 
+            content: '→'; 
+            position: absolute; 
+            left: 0; 
+            color: var(--primary); 
+        }
+
+        /* TAGS DE FENÔMENO COM TOOLTIPS */
+        .phenom-tag {
+            display: inline-block;
+            background: #fff5f5;
+            color: var(--accent);
+            padding: 2pt 6pt;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 600;
+            margin-top: 5pt;
+            margin-right: 4pt;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: help;
+        }
+
+        .phenom-tag:hover {
+            background: #c53030;
+            color: white;
+        }
+
+        .phenom-tag::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 75%;
+            transform: translateX(-50%);
+            background: rgba(197, 48, 48, 0.95);
+            color: white;
+            padding: 4pt 8pt;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            margin-bottom: 6pt;
+        }
+
+        .phenom-tag:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+/* TAGS DE FENÔMENO AFTER */
+        .phenom-tag-after {
+            display: inline-block;
+            background: #F2FFEE;
+            color: var(--accent);
+            padding: 2pt 6pt;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            font-weight: 600;
+            margin-top: 5pt;
+            margin-right: 4pt;
+            transition: all 0.3s ease;
+            position: relative;            
+        }
+
+        .phenom-tag-after:hover {
+            background: #2f855a;
+            color: white;
+        }
+
+        .phenom-tag-after:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        /* TERMOS TÉCNICOS DESTACADOS */
+        .tech-term {
+            background: var(--primary-light);
+            color: var(--accent);
+            padding: 1pt 4pt;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 9.5pt;
+            cursor: help;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .tech-term:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .tech-term::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 70%;
+	
+            transform: translateX(-40%);
+            background: rgba(44, 82, 130, 0.95);
+            color: white;
+            padding: 6pt 10pt;
+            border-radius: 4px;
+            font-size: 8.5pt;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            margin-bottom: 6pt;
+        }
+
+        .tech-term:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .analysis-content {
+            background: #e8f4ff;
+            padding: 12pt;
+            border-radius: 4px;
+            margin: 10pt 0;
+            font-size: 10pt;
+        }
+        
+        .technical-term {
+            background: #003366;
+            color: white;
+            padding: 2pt 6pt;
+            border-radius: 3px;
+            font-size: 9pt;
+            font-weight: bold;
+            margin: 0 2pt;
+        }
+        
+        /* PIPELINE DE ADAPTAÇÃO LINGUÍSTICA - CORRIGIDO */
+        .pipeline-wrapper {
+            position: relative;
+            background: var(--card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 30pt 50pt; /* Mais espaço nas laterais para as setas */
+            margin: 20pt 0;
+            overflow: hidden;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pipeline-container {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            transition: transform 0.6s ease;
+        }
+        
+        .pipeline-box {
+            width: 280px; /* Mais largo que quadrado */
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 20pt;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: absolute;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.4s ease;
+        }
+        
+        .pipeline-box.active {
+            opacity: 1;
+            transform: translateX(0);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11pt;
+            font-weight: bold;
+            z-index: 3;
+        }
+        
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 51, 102, 0.2);
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.7;
+        }
+        
+        .arrow-btn:hover {
+            background: rgba(0, 51, 102, 0.8);
+            opacity: 1;
+        }
+        
+        .arrow-btn:disabled {
+            opacity: 0.2;
+            cursor: not-allowed;
+        }
+        
+        .arrow-btn:disabled:hover {
+            background: rgba(0, 51, 102, 0.2);
+        }
+        
+        .arrow-prev {
+            left: 10px; /* Metade dentro do box */
+        }
+        
+        .arrow-next {
+            right: 10px; /* Metade dentro do box */
+        }
+
+        /* RESULTADOS EM BLOCOS VERTICAIS */
+.results-vertical {
+    display: block;
+    margin: 20pt 0;
+}
+
+.results-vertical > div {
+    margin-bottom: 20pt;
+}
+
+.results-vertical > div:last-child {
+    margin-bottom: 0;
+}
+
+.qualitative-box, .quantitative-box, .impact-box {
+    background: white;
+    border: 2px solid #003366;
+    border-radius: 8px;
+    padding: 15pt;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+    width: 100%;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10pt;
+    margin-top: 10pt;
+}
+        
+        .metric-card {
+            background: #f0f7ff;
+            border: 1px solid #003366;
+            border-radius: 6px;
+            padding: 10pt;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 4pt;
+        }
+        
+        .metric-label {
+            font-size: 9pt;
+            color: #666;
+        }
+        
+        /* QUOTE BOX */
+        .quote-box {
+            background: linear-gradient(135deg, #003366, hsl(215, 50%, 35%));
+            color: white;
+            padding: 1.75rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(31, 79, 176, 0.2);
+            margin: 1.5rem 0;
+        }
+        
+        .quote-box p {
+            font-size: 1.05rem;
+            font-weight: 500;
+            font-style: italic;
+            opacity: 0.95;
+            text-align: center;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+        
+        .quote-box .source {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-style: normal;
+        }
+        
+        /* LISTAS */
+        ul {
+            margin-left: 20pt;
+            margin-top: 8pt;
+        }
+        
+        li {
+            margin-bottom: 8pt;
+            text-align: justify;
+        }
+        
+        strong {
+            color: #003366;
+        }
+        
+        /* ANIMAÇÕES */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        
+        @media print {
+            body { padding: 5mm; }
+        }
+        
+      @media (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+            
+            .pipeline-wrapper {
+                padding: 20pt 40pt;
+            }
+            
+            .pipeline-box {
+                width: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO DO CASO 1 -->
+    <div class="case-header">
+        <div class="case-number">CASO 1 – PORTFÓLIO PARA PROF. PAULO</div>
+        <h1>Forma linguística, interpretação e tomada de decisão <br> em sistemas de IA:</h1>
+        <div class="case-subtitle">um estudo aplicado de linguagem em uso</div>
+        <div class="case-tags">
+            <span class="case-tag">Forma e Significado</span>
+            <span class="case-tag">Sintaxe em contexto</span>
+            <span class="case-tag">Interpretação textual</span>
+            <span class="case-tag">Linguagem em uso</span>            
+        </div>
+    </div>
+
+    <!-- BOX DE ABERTURA -->
+    <div class="research-statement">
+        <strong>Prof. Paulo:</strong> este estudo de caso analisa como escolhas linguísticas aparentemente técnicas, como <strong>segmentação</strong>, <strong>padronização</strong> e <strong>tratamento da variação</strong>, produzem efeitos interpretativos concretos em sistemas que operam sobre linguagem natural. O foco não está na tecnologia em si, mas na <strong>relação entre forma linguística, contexto de uso e construção de sentido</strong>, evidenciando como decisões sintáticas e textuais orientam leituras, inferências e respostas automáticas. O caso dialoga com abordagens de <strong>gramática em uso</strong>, <strong>linguagem em contexto</strong> e <strong>papéis discursivos da forma</strong>, mostrando como a mediação linguística atua como ponte entre dados textuais reais e modelos computacionais.
+    </div>
+
+    <!-- SEÇÃO 1: O PROBLEMA TRIPLO -->
+    <section>
+        <h2>O PROBLEMA TRIPLO: O VIÉS INTERPRETATIVO EM CASCATA</h2>
+        <p style="text-align: justify;">
+            O caso foi desenvolvido a partir da <strong>análise de um <i>chatbot</i> interno de uma multinacional de telecomunicações</strong>, que não interagia diretamente com clientes, mas produzia <i>scripts</i> padronizados para operadores de <i>telemarketing</i>.<br><br> Esses <i>scripts</i> buscavam uniformizar a comunicação, mas acabavam impondo estruturas linguísticas rígidas, <strong>pouco sensíveis ao uso real da língua e às situações concretas de interação</strong>. <br><br>A partir de relatos e queixas recorrentes dos operadores, o estudo passou a investigar <strong>como decisões sintáticas e textuais interferiam na interpretação dos enunciados e na dinâmica comunicativa com os clientes</strong>.
+        </p>
+        <br>
+        <div class="cards-grid">
+            <div class="bias-card">
+                <h4>Viés interpretativo inicial</h4>
+                <p>Os <i>scripts</i> padronizados tinham estruturas sintáticas rígidas, insensíveis ao uso real da língua. <br><br> Isso gerava um viés interpretativo inicial, exigindo que os operadores reinterpretassem os enunciados para torná-los compreensíveis e funcionalmente adequados à interação.</p>
+            </div>
+            
+            <div class="bias-card">
+                <h4>Propagação do viés</h4>
+                <p>Ao serem reproduzidas ou ajustadas em tempo real, essas estruturas afetavam a progressão textual e a clareza dos enunciados. <br><br>O viés interpretativo inicial se propagava, interferindo nos efeitos de sentido percebidos pelos clientes durante a interação (chamada com <i>call center</i>).</p>
+            </div>
+            
+            <div class="bias-card">
+                <h4>Viés em cascata</h4>
+                <p>Do ponto de vista dos clientes, os enunciados soavam artificiais ou pouco ajustados ao contexto comunicativo. <br><br>O viés interpretativo em cascata resultava em dificuldades de compreensão, insatisfação e, em alguns casos, abandono da chamada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RELATOS DOS OPERADORES -->
+    <div class="operator-complaints">
+        <div class="complaint-title">Relatos dos operadores</div>
+        <div class="complaint-images">
+            <div class="img-placeholder"><img src="https://github.com/alc-etimo/prof_pauloII/blob/main/comentario-operador-critica-1.png?raw=true" width="100%;" alt="comentário de operador falando que não entendeu nada" /></div>
+            <div class="img-placeholder"><img src="https://github.com/alc-etimo/prof_pauloII/blob/main/comentario-operador-critica-2.png?raw=true" width="100%;" alt="comentário de operador falando que não está explicativo, e sim, confuso"/></div>
+            <div class="img-placeholder"><img src="https://github.com/alc-etimo/prof_pauloII/blob/main/comentario-operador-critica-3.png?raw=true" width="100%;" alt="comentário de operador falando que achou que ha espaco para uma linguagem menos técnica"/></div>
+        </div>
+    </div>
+
+    <!-- O QUE FALHAVA vs O QUE PRECISAVA -->
+    <div class="two-columns">
+        <div class="problem-box">
+            <h3>O que falhava</h3>
+            <ul>
+                <li>Normatização excessiva da sintaxe como padrão do sistema</li>
+                <li>Jargão corporativo opaco reproduzido sem mediação</li>
+                <li>Estruturas pouco orais (voz passiva, perífrases)</li>
+                <li>Apagamento da agência linguística do operador</li>
+            </ul>
+        </div>
+        
+        <div class="solution-box">
+            <h3>O que precisava</h3>
+            <ul>
+                <li>Variação linguística tratada como dado estrutural</li>
+                <li>Adequação sintático-pragmática ao atendimento oral</li>
+                <li>Modelagem discursiva sensível ao perfil do cliente</li>
+                <li>Governança ética com monitoramento de vieses</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FUNDAMENTAÇÃO TEÓRICA -->
+    <section>
+        <h2>FUNDAMENTAÇÃO TEÓRICA — VARIAÇÃO, NORMA E MEDIAÇÃO LINGUÍSTICA</h2>
+        <p style="text-align: justify;">
+            A análise se apoia em perspectivas sociolinguísticas que entendem a variação como
+ parte do funcionamento da língua, e não como desvio. A imposição de uma norma artificial em sistemas de atendimento mediados por tecnologia evidencia relações de poder e exclusão, principalmente quando variantes em uso, legítimas, são apagadas em nome de uma "neutralidade técnica". Conceitos como adaptação, contato e agência linguística orientam o enquadramento do problema e das intervenções propostas.      </div>
+        
+    
+
+<div class="theory-highlight">
+           <p style="text-align:justify;"> <strong>Hipótese central:</strong> A mediação linguística automatizada, ao operar com uma norma artificial descontextualizada, reproduzia assimetrias sociais no atendimento, afetando tanto a agência dos operadores quanto a eficácia comunicativa com os clientes.</p>
+        </div>
+
+    <h3>Conceitos-chave aplicados</h3>
+        <div style="margin-bottom: 10pt; text-align:center;">        
+        <span class="case-tag" style="background: #e2e8f0; color: #003366; padding:5px; margin-top: 5pt; margin-right: 3pt; font-size:12px;">Legitimidade (Hagemeijer)</span>
+        <span class="case-tag" style="background: #e2e8f0; color: #003366; padding:5px; margin-top: 5pt; margin-right: 3pt; font-size:12px;">Variação Sistemática (Labov)</span>
+        <span class="case-tag" style="background: #e2e8f0; color: #003366; padding:5px; margin-top: 5pt; margin-right: 3pt;font-size:12px;">Contato e Adaptação (Koch)</span>
+        <span class="case-tag" style="background: #e2e8f0; color: #003366;  padding:5px; margin-top: 5pt; margin-right: 3pt;font-size:12px;">Agência Linguística (Moura Neves)</span>
+        </div>
+    </section>
+
+    <!-- CORE DO CASE -->
+    <section>
+        <h2>CASOS PARADIGMÁTICOS: ISENÇÃO • PAGAMENTO • ENGAJAMENTO</h2>
+        <div class="theory-highlight">
+           <p style="text-align:justify;"> <strong>Mediação linguística como adaptação funcional em contexto institucional:</strong> 
+
+O que está em jogo nos exemplos a seguir não é variação “livre”, mas adaptação linguística orientada por contexto. Em situações de comunicação assimétrica, como o atendimento telefônico mediado por <i>scripts</i>, formas institucionalmente legitimadas tendem a maximizar controle e padronização, mas à custa de transparência sintática e eficiência interpretativa. A mediação linguística atua justamente nesse ponto: reorganiza a forma para alinhar sintaxe, pragmática e ação, reduzindo custo cognitivo e restaurando a agência discursiva do operador.</p></div>
+        <div class="click-hint">
+            <svg class="hand-icon" viewBox="0 0 24 24">
+                <path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z"/>
+            </svg>
+            Clique em cada um dos casos para ver a análise detalhada
+        </div>
+
+        <div class="interactive-rewrite">
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="openTab(event, 'case1')">CASO 1: ISENÇÃO</button>
+                <button class="tab-btn" onclick="openTab(event, 'case2')">CASO 2: PAGAMENTO</button>
+                <button class="tab-btn" onclick="openTab(event, 'case3')">CASO 3: ENGAJAMENTO</button>
+            </div>
+
+            <div id="case1" class="tab-content active">
+            
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15pt;">
+
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--danger); text-align:center;">Antes (Norma Institucional)</h4>
+ 
+
+                        <div class="img-placeholder"><img src="https://github.com/alc-etimo/prof_pauloII/blob/main/exemplo-passiva.png?raw=true" width="100%;" alt="exemplo de sentença passiva"/></div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--success); text-align:center;">Depois (Mediação Dialetal)</h4>
+                        <div class="img-placeholder"><img src="https://github.com/alc-etimo/prof_pauloII/blob/main/exemplo-ativa.png?raw=true" height="26" alt="exemplo de sentença ativa"/></div>
+                    </div>
+                </div>
+                <div class="analysis-box">
+                    <h4>Análise Sintático-Funcional</h4>
+                    <ul class="analysis-list">
+                        <li><span class="tech-term" data-tooltip="Forma longa dilui a ação; forma curta a torna visível">Seleção verbal e densidade informacional:</span> A formulação institucional recorre a uma construção perifrástica com baixo conteúdo lexical, distribuindo a ação em múltiplos núcleos funcionais. A reformulação concentra o evento em um único verbo pleno, facilitando a identificação imediata do que deve ser feito.</li>
+
+
+<li><span class="tech-term" data-tooltip="O 'fazer' deixa de ser coisa e vira ação">Organização do evento na sintaxe:</span> No enunciado institucional, o evento aparece como entidade abstrata, exigindo camadas adicionais para expressar obrigação. Na reformulação, o evento volta a ser o núcleo da frase, diretamente acionável na interação.</li>
+
+
+<li><span class="tech-term" data-tooltip="Frase pensada para ser dita, não arquivada">Alinhamento sintaxe–pragmática:</span> A forma mediada reflete melhor as condições da fala telefônica: tempo reduzido, atenção dividida e necessidade de resposta imediata. A estrutura acompanha o ritmo da interação.</li>
+
+
+<li><span class="tech-term" data-tooltip="Palavra conhecida chega mais rápido">Escolha lexical orientada pelo uso:</span> A substituição não envolve mudança de registro formal/informal, mas a troca de itens pouco frequentes em instruções orais por formas centrais no repertório ativo dos falantes.</li>
+
+
+<li><span class="tech-term" data-tooltip="Quem faz o quê fica claro">Modo verbal e agência operacional:</span> O imperativo reorganiza a relação entre operador e ação: há alguém que age e algo que é afetado. Essa clareza é crucial quando linguagem e procedimento caminham juntos.</li>
+
+                    </ul>
+<center>
+                    <span class="phenom-tag" data-tooltip="A ação vira 'coisa' e perde dinamismo na fala">NOMINALIZAÇÃO</span>
+		    <span class="phenom-tag" data-tooltip="Não fica claro quem executa a ação">VOZ PASSIVA</span>
+		    <span class="phenom-tag" data-tooltip="A forma soa burocrática para a situação de atendimento">DISTANCIAMENTO INSTITUCIONAL</span>                    
+                    <br>
+		    <span class="phenom-tag-after">VERBO PLENO</span>
+		    <span class="phenom-tag-after">VOZ ATIVA</span>
+		    <span class="phenom-tag-after">AGÊNCIA EXPLÍCITA</span> </center>
+                </div>
+            </div>
+
+            <div id="case2" class="tab-content">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15pt;">
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--danger); text-align:center;">Antes (Norma Institucional)</h4>
+                        <div class="img-placeholder"><img src="https://github.com/alc-etimo/prof_pauloII/blob/main/exemplo-rebuscado.png?raw=true" width="100%" alt="exemplo de sentença rebuscada"/></div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--success); text-align:center;">Depois (Mediação Dialetal)</h4>
+                        <div class="img-placeholder"><img src="https://github.com/alc-etimo/prof_pauloII/blob/main/exemplo-simples.png?raw=true" height="25" width="100%" alt="exemplo de sentença simples"/></div>
+                    </div>
+                </div>
+                <div class="analysis-box">
+                    <h4>Análise Sintático-Funcional</h4>
+                    <ul class="analysis-list">
+                        <li><span class="tech-term" data-tooltip="Menos camadas para chegar ao sentido">Seleção do conector e forma do complemento:</span> A locução <strong>"a fim de que"</strong> exige uma <strong>oração finita no subjuntivo</strong>, projetando uma estrutura mais longa e abstrata. A A reformulação substitui esse encadeamento por <strong>"para + infinitivo"</strong>, mantendo a finalidade, mas com menor profundidade estrutural.</li>
+
+
+<li><span class="tech-term" data-tooltip="Mesma intenção, menos esforço">Marcação modal e esforço de processamento:</span> O <strong>subjuntivo</strong>, embora associado à formalidade institucional, pouco acrescenta informativamente neste contexto. A forma <strong>infinitiva </strong>preserva a intenção comunicativa sem exigir marcação morfológica adicional.</li>
+
+
+<li><span class="tech-term" data-tooltip="Quem faz fica evidente">Controle do agente na interação:</span> Na formulação institucional, o responsável por "verificar" fica implícito e dependente de inferência. A construção infinitiva permite atribuir imediatamente a ação ao operador, de forma pragmática e sem ambiguidades.</li>
+
+
+
+
+<li><span class="tech-term" data-tooltip="Palavras comuns facilitam a compreensão">Transparência lexical do predicado:</span> A expressão <strong>"o corrido"</strong>, além de não padrão, quando o esperado seria <strong>"o ocorrido"</strong>, funciona como item lexical opaco e pouco frequente na oralidade. A reformulação opta por <strong>"o que aconteceu"</strong>, estrutura recorrente no vernáculo falado e semanticamente direta.</li>
+
+
+<li><span class="tech-term" data-tooltip="Formal sem ser artificial">Ajuste no continuum acrolético–basilético:</span> A mediação não elimina o registro institucional, mas <strong>desloca o enunciado para uma zona de maior funcionalidade comunicativa</strong>. O operador continua falando “pela empresa”, agora com uma forma cooperativa e operacionalmente eficaz.</li>
+                </ul>
+<center>
+                    <span class="phenom-tag" data-tooltip="Marca hierarquia em vez de cooperação">TRATAMENTO FORMAL EXCESSIVO</span>
+                    <span class="phenom-tag" data-tooltip="Aumenta o custo cognitivo">ESTRUTURA COMPLEXA</span>
+                    <span class="phenom-tag" data-tooltip="Sobrecarga morfológica sem ganho prático">SUBJUNTIVO</span><br>
+		    <span class="phenom-tag-after">FORMA INFINITIVA</span>
+                    <span class="phenom-tag-after">ECONOMIA SINTÁTICA</span>
+                    <span class="phenom-tag-after">AGÊNCIA RECUPERADA</span>
+
+</center>
+                </div>
+            </div>
+
+            <div id="case3" class="tab-content">
+<div class="click-hint">
+           <svg class="hand-icon" viewBox="0 0 24 24" >
+                <path d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M7,9l1.41,1.41L11,7.83V16h2V7.83l2.59,2.58L17,9l-5-5L7,9z"/>
+            </svg>
+            Clique nas imagens para vê-las em maior resolução
+        </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15pt;">
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--danger); text-align:center;">Antes (Norma Institucional)</h4>
+                        <div class="img-placeholder"><a href="https://github.com/alc-etimo/prof_pauloII/blob/main/exemplo-institucional.png?raw=true" target="_blank"><img src="https://github.com/alc-etimo/prof_pauloII/blob/main/exemplo-institucional.png?raw=true" width="100%" alt="exemplo de sentença simples"/></a></div>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 9pt; color: var(--success); text-align:center;">Depois (Mediação Dialetal)</h4>
+                        <div class="img-placeholder"><a href="https://github.com/alc-etimo/prof_pauloII/blob/main/exemplo-natural.png?raw=true" target="_blank"><img src="https://github.com/alc-etimo/prof_pauloII/blob/main/exemplo-natural.png?raw=true" height="15" width="100%" alt="exemplo de sentença simples"/></a></div>
+                    </div>
+                </div>
+                <div class="analysis-box">
+                    <h4>Análise Sintático-Funcional</h4>
+                    <ul class="analysis-list">
+                        <li><strong> <span class="tech-term" data-tooltip="Muitas relações empilhadas atrasam o sentido">Encadeamento excessivo de sintagmas preposicionais:</span></strong> A formulação institucional acumula reações semânticas em uma <strong>cadeia longa de sintagmas preposicionais</strong> ("de incentivo <strong>à</strong> ativação <strong>ao</strong> débito automático <strong>para</strong> os clientes da base”), típica de registros burocráticos. A reescrita redistribui o conteúdo em uma <strong>sequência verbal linear</strong>, mais compatível com processamento em tempo real.</li>
+
+
+<li><span class="tech-term" data-tooltip="O verbo passa a comandar a frase">Reorganização do núcleo da construção:</span> O enunciado original se estrutura em torno de um <strong>sintagma nominal abstrato</strong> (“ação de incentivo”), sem eixo temporal ou direcional claro. A mediação <strong>desloca o centro da frase para um verbo pleno</strong>, que passa a organizar a progressão do enunciado e a orientar a interação.</li>
+
+
+<li><span class="tech-term" data-tooltip="Alguém fala com alguém, para algo">Endereçamento direto e força interacional:</span> A norma usada evita o endereçamento explícito, <strong>produzindo um texto neutro e despersonalizado</strong>. O uso do imperativo ("Incentive…") na reescrita introduz uma relação direta entre operador e ação, <strong>favorecendo envolvimento e responsividade</strong>.</li>
+
+<li><span class="tech-term" data-tooltip="Menos abstração, mais ação">Eliminação de nominalização opaca:</span> A expressão <strong>"ação de incentivo"</strong> funciona como uma <strong>nominalização que concentra sentido, mas oculta quem age, quando ou como</strong>. A reescrita desfaz essa condensação e explicita o percurso da ação, sem perda do conteúdo institucional.</li>
+
+<li><span class="tech-term" data-tooltip="O ponto principal aparece mais cedo">Distribuição estratégica da informação relevante:</span> No enunciado institucional, a informação mais importante ("ativação do débito automático") está <strong>diluída no final da cadeia nominal.</strong> A mediação reorganiza a estrutura, trazendo o objetivo da ação ("descobrir os benefícios do débito automático") para a posição de <strong>destaque pragmático</strong>, facilitando compreensão e engajamento.</strong></li>
+
+
+
+                    </ul>
+<center>
+                                        <span class="phenom-tag" data-tooltip="Relações demais antes do ponto principal">RECURSIVIDADE PREPOSICIONAL</span>
+		    <span class="phenom-tag" data-tooltip="Ação sem percurso claro">NOMINALIZAÇÃO</span>
+                    <span class="phenom-tag" data-tooltip="Baixo envolvimento interacional">ENDEREÇAMENTO NEUTRO</span><br>
+		    <span class="phenom-tag-after">VERBALIZAÇÃO DINÂMICA</span>
+                    <span class="phenom-tag-after">FOCO INFORMACIONAL</span>
+                    <span class="phenom-tag-after">ENDEREÇAMENTO DIRETO</span>
+</center>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLUXO DE TRANSFORMAÇÃO SINTÁTICO-PRAGMÁTICA -->
+    <section>
+        <h2>FLUXO DE TRANSFORMAÇÃO SINTÁTICO-PRAGMÁTICA</h2>
+        
+        <p style="font-size: 10pt; margin-bottom: 10pt; text-align: center;">A proposta não parte da ideia de "corrigir" a fala, mas de <strong>mediar registros</strong>. O sistema opera como um <strong>tradutor intraidiomático</strong>, ajustando formas linguísticas para garantir inteligibilidade, adequação contextual e equidade comunicativa em interações institucionais.</p>
+    
+        <div class="click-hint">
+        <div class="arrows-container">
+            <svg class="hand-icon left" viewBox="0 0 24 24">
+                <path d="M10,9V5h4v4h5l-7,7l-7-7H10z"/>
+            </svg>
+            <svg class="hand-icon right" viewBox="0 0 24 24">
+                <path d="M10,9V5h4v4h5l-7,7l-7-7H10z"/>
+            </svg>
+        </div>
+        Clique nas setas para navegar entre as etapas
+    </div>
+
+        <div class="pipeline-wrapper">
+            <button class="arrow-btn arrow-prev" onclick="moveSlide(-1)" id="prevBtn" disabled>❮</button>
+            
+            <div class="pipeline-container" id="pipelineContainer">
+                <!-- Box 1 - Ativo por padrão -->
+                <div class="pipeline-box active" id="step1">
+                    <div class="step-number">1</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Leitura do perfil pragmático</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Identificação de padrões de uso do operador e do cliente a partir de interações anteriores, considerando escolhas lexicais, estruturas recorrentes e marcas discursivas relevantes para a situação de atendimento
+                    </p>
+                </div>
+                
+                <!-- Box 2-5 inicialmente escondidos -->
+                <div class="pipeline-box" id="step2">
+                    <div class="step-number">2</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Ajuste de registro em contexto</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Definição do grau de formalidade mais adequado à interação específica, equilibrando expectativas institucionais <br> e modos reais de dizer, sem imposição <br> de uma norma artificial                    </p>
+                </div>
+               
+                <div class="pipeline-box" id="step3">
+                    <div class="step-number">3</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Reorganização orientada pelo uso</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+		    Aplicação de princípios de reescrita <br> que privilegiam verbos plenos, <br> estruturas lineares e explicitação<br> de relações de ação, alinhando forma sintática e função comunicativa</p>
+                </div>
+                
+                <br><div class="pipeline-box" id="step4">
+                    <div class="step-number">4</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Avaliação de naturalidade real</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Validação das reformulações <br> com operadores em contexto de uso, <br> observando fluidez, compreensão imediata e compatibilidade com a oralidade funcional do atendimento                    </p>
+                </div>
+                
+                <div class="pipeline-box" id="step5">
+                    <div class="step-number">5</div>
+                    <strong style="font-size: 11pt; color: var(--primary);">Curadoria e retroalimentação</strong>
+                    <p style="font-size: 9.5pt; margin-top: 8pt; color: #555;">
+                        Registro sistemático de desvios recorrentes, escolhas eficazes e pontos <br>de tensão linguística, alimentando materiais de formação, diretrizes editoriais e ajustes contínuos do protocolo
+                    </p>
+                </div>
+            </div>
+            
+            <button class="arrow-btn arrow-next" onclick="moveSlide(1)" id="nextBtn">❯</button>
+        </div>
+    </section>
+
+    <!-- RESULTADOS QUALITATIVOS, QUANTITATIVOS E FORMATIVOS -->
+    <section>
+       <section>
+        <h2>Resultados Qualitativos, Quantitativos e Formativos</h2>
+        
+        <div class="results-vertical">
+            <div class="qualitative-box">
+                <h3 style="border-left:3px; margin-top: 5px; #ffffff">Resultados Qualitativos</h3>
+                <ul>
+                   
+
+<li><strong>Redução consistente </strong> de ambiguidades interpretativas em <i>scripts</i> operacionais</li>
+                    
+<li><strong>Maior transparência sintática</strong> nas instruções de atendimento</li>
+ 
+
+<li><strong>Reconhecimento da variação linguística como dado relevante</strong> para análise e decisão</li>
+ 
+
+<li><strong>Mudança de abordagem em equipes técnicas</strong>, com maior atenção ao funcionamento da língua</li>
+                
+<li><strong>Fortalecimento da autonomia linguística dos operadores</strong> em situações de interação real</li>
+
+              </ul>
+            </div>
+            
+            <div class="quantitative-box">
+                <h3 style="border-left:3px; margin-top: 5px; #ffffff">Resultados Quantitativos</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">+12 pts</div>
+                        <div class="metric-label">no índice de satisfação dos clientes</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">-18%</div>
+                        <div class="metric-label">na necessidade de reencaminhamento de chamadas</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">+22%</div>
+                        <div class="metric-label">no índice de satisfação dos operadores</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">-30s</div>
+                        <div class="metric-label">no tempo médio de atendimento</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="impact-box">
+                <h3 style="border-left:3px; margin-top: 5px; #ffffff">Desdobramentos etodológicos e formativos</h3>
+                <ul>
+                    <li><strong>Governança linguística e ética</strong>: incorporação do protocolo como diretriz interna de uso responsável da linguagem em sistemas automatizados</li>
+                    <li><strong>Formação e letramento linguístico</strong>: capacitação de mais de 200 agentes com foco em adequação linguística, uso e equidade comunicativa</li>
+                    <li><strong>Ampliação de escopo empírico</strong>: replicação do modelo em outros canais de interação (WhatsApp e SMS), preservando os princípios linguísticos do protocolo</li>
+                    <li><strong>Reconhecimento interno da abordagem</strong>: validação do trabalho por instâncias estratégicas ligadas à experiência do cliente</li>
+                    <li><strong>Disseminação de conhecimento aplicado</strong>: condução de formações internas sobre linguagem, tecnologia e ética em contextos de uso real</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGAÇÃO COM AS DISCIPLINAS -->
+    <section>
+        <h2>Ligação com as Disciplinas</h2>
+        
+        <div class="research-statement">
+            <p style="font-style: normal;">Este caso dialoga diretamente com conteúdos trabalhados ao longo da formação em Linguística no DLCV, especialmente no eixo <strong>gramática em uso</strong>, <strong>variação</strong> e <strong>funcionamento sintático do português</strong>:</p>
+            <ul style="margin-top: 10pt;">
+                <li><strong>Gramática e Ensino:</strong> a variação é tratada como recurso interpretativo e argumentativo, não como desvio a ser corrigido</li>
+                <li><strong>Elementos de Linguística:</strong> as diferentes formas de dizer são analisadas como sistemas regulares, condicionados por contexto, função e interação</li>
+                <li><strong>Morfologia e Sintaxe do Português:</strong> reescritas baseadas em escolhas verbais, redução de nominalizações e reorganização de estruturas complexas</li>
+                <li><strong>Teorias do Texto: Enunciação, Discurso e Texto:</strong> atenção aos efeitos de sentido, ao endereçamento e à posição do sujeito na interação institucional</li>
+                <li><strong>Sintaxe (seleção verbal):</strong> ajuste de s-seleção e c-seleção para tornar relações sintáticas mais transparentes e cognitivamente acessíveis</li>
+                
+</ul>
+        </div>
+
+        <!-- QUOTE BOX -->
+        <div class="quote-box">
+            <p>"O caso demonstra como conceitos trabalhados em sala de aula podem orientar decisões linguísticas concretas em contextos profissionais, sem perda de rigor analítico.<br><br>O problema, portanto, nunca foi a qualidade dos dados, mas a incapacidade de sistemas institucionais reconhecerem funcionamento gramatical onde o poder normativo tendia a enxergar apenas erro."</p>
+            <div class="source">Síntese do Caso</div>
+        </div>
+        
+        <div class="research-statement">
+            <p><strong>Continuidade de princípios em outros contextos:</strong> a mesma abordagem foi usada em outros projetos profissionais, como a otimização de legendas voltadas à acessibilidade em plataformas de <span style="font-style:normal;">streaming</span> e revisão de fluxos multilíngues de localização. Em todos os casos, o princípio permaneceu o mesmo: <strong>tratar a variação linguística como sistemática, funcional e legítima</strong>, orientando intervenções sintáticas e textuais com base no uso real da língua.</p>
+        </div>
+    </section>
+
+    <script>
+        // Função de Tabs
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Função do Pipeline
+        let currentStep = 1;
+        const totalSteps = 5;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        function updatePipeline() {
+            // Esconde todos os boxes
+            for (let i = 1; i <= totalSteps; i++) {
+                const box = document.getElementById(`step${i}`);
+                box.classList.remove('active');
+            }
+            
+            // Mostra apenas o box atual
+            const currentBox = document.getElementById(`step${currentStep}`);
+            currentBox.classList.add('active');
+            
+            // Atualiza estado dos botões
+            prevBtn.disabled = currentStep === 1;
+            nextBtn.disabled = currentStep === totalSteps;
+        }
+        
+        function moveSlide(direction) {
+            const newStep = currentStep + direction;
+            if (newStep >= 1 && newStep <= totalSteps) {
+                currentStep = newStep;
+                updatePipeline();
+            }
+        }
+        
+        // Inicializa o pipeline
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePipeline();
+            
+            // Inicializa a primeira aba como ativa
+            openTab({currentTarget: document.querySelector('.tab-btn.active')}, 'case1');
+        });
+    </script>
+
+</body>
+</html>
