@@ -1,0 +1,971 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossiê de Candidatura ao EMLDS | Para o Prof. Paulo Segundo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            font-size: 10.5pt;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #003366;
+            padding-bottom: 15pt;
+            margin-bottom: 25pt;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20pt;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5pt;
+        }
+        
+        .header .tagline {
+            font-size: 12pt;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 10pt;
+        }
+        
+        .header .context {
+            font-size: 10pt;
+            color: #666;
+            font-style: italic;
+        }
+        
+        section {
+            margin-bottom: 25pt;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 5pt;
+            margin-bottom: 15pt;
+            text-transform: uppercase;
+            letter-spacing: 0.8pt;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #003366;
+            margin-top: 18pt;
+            margin-bottom: 10pt;
+            border-left: 5px solid #003366;
+            padding-left: 10pt;
+        }
+        
+        .highlight {
+            color: #003366;
+            font-weight: 700;
+        }
+        
+        .grade-badge {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            padding: 2pt 8pt;
+            border-radius: 5px;
+            font-size: 10pt;
+            font-weight: bold;
+            margin-right: 6pt;
+            margin-bottom: 8pt;
+        }
+
+        .grade-badge.alone {
+            display: inline-block;
+            background: #7b98b5;
+            color: white;
+            padding: 2pt 8pt;
+            border-radius: 5px;
+            font-size: 10pt;
+            font-weight: bold;
+            margin-right: 10pt;
+            margin-bottom: 10pt;
+        }
+        
+        .intro-box {
+            background: #f0f7ff;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            margin: 20pt 0;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .intro-box p {
+            margin-bottom: 5pt;
+            line-height: 1.7;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 20pt;
+            margin: 20pt 0;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+            text-align: center;
+            border: none;
+            padding-left: 0;
+        }
+        
+        .toc ol {
+            margin-left: 20pt;
+        }
+        
+        .toc li {
+            margin-bottom: 8pt;
+            line-height: 1.6;
+        }
+        
+        .toc a {
+            color: #003366;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        
+        .work-card {
+            border: 2px solid #d0d0d0;
+            border-radius: 8px;
+            padding: 15pt;
+            margin: 15pt 0;
+            background: #fafafa;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10pt;
+            padding-bottom: 8pt;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .work-title {
+            font-weight: bold;
+            color: #003366;
+            font-size: 11.5pt;
+        }
+        
+        .work-date {
+            color: #666;
+            font-style: italic;
+            font-size: 9.5pt;
+        }
+        
+        .work-content {
+            font-size: 10pt;
+            line-height: 1.7;
+        }
+        
+        .work-excerpt {
+            background: white;
+            border-left: 4px solid #003366;
+            padding: 12pt;
+            margin: 12pt 0;
+            font-style: italic;
+            color: #444;
+            border-radius: 4px;
+        }
+        
+        .work-excerpt strong {
+            color: #003366;
+            font-style: normal;
+        }
+        
+        .note-box {
+            background: #fff8e1;
+            border-left: 5px solid #ffc107;
+            padding: 12pt;
+            margin: 15pt 0;
+            font-size: 10pt;
+            border-radius: 4px;
+        }
+        
+        .note-box.critical {
+            background: #e3f2fd;
+            border-left-color: #003366;
+        }
+        
+        .img-placeholder {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            border: 2px dashed #999;
+            padding: 5pt;
+            text-align: center;
+            margin: 15pt 0;
+            color: #666;
+            font-style: italic;
+            border-radius: 8px;
+        }
+        
+        .professor-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15pt;
+            margin-top: 15pt;
+        }
+        
+      
+
+
+
+
+.professor-card {
+
+background: white;
+padding: 15pt;
+border-radius: 8px;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+border-left: 5px solid #003366;
+        }
+    
+
+.professor-card h4 {
+ 
+color: #2C5530;
+margin-bottom: 8pt;
+font-size: 11pt;
+        }
+  
+
+.professor-card .research {
+font-size: 9.5pt;
+color: #555;
+margin-bottom: 10pt;
+        }
+        
+        
+
+.professor-card .connection {
+
+background: #f0f7f0;
+padding: 8pt;
+border-radius: 4px;
+font-size: 9.5pt;
+margin-top: 8pt;
+        }
+ 
+
+      
+        .timeline {
+            margin: 20pt 0;
+            position: relative;
+            padding-left: 40pt;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 18pt;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #003366 0%, #0066cc 100%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20pt;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28pt;
+            top: 5pt;
+            width: 14px;
+            height: 14px;
+            background: #003366;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #003366;
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #003366;
+            font-size: 11pt;
+            margin-bottom: 4pt;
+        }
+        
+        .timeline-content {
+            font-size: 10pt;
+            line-height: 1.6;
+        }
+        
+        .emlds-overview {
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+            color: white;
+            padding: 20pt;
+            border-radius: 8px;
+            margin: 20pt 0;
+        }
+        
+        .emlds-overview h3 {
+            color: white;
+            border-left-color: white;
+        }
+        
+        .emlds-overview ul {
+            margin-left: 20pt;
+            margin-top: 10pt;
+        }
+        
+        .emlds-overview li {
+            margin-bottom: 6pt;
+        }
+        
+        .final-argument {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+            border: 3px solid #003366;
+            padding: 20pt;
+            border-radius: 10px;
+            margin: 25pt 0;
+        }
+        
+        .final-argument p {
+            font-size: 11pt;
+            line-height: 1.8;
+            margin-bottom: 12pt;
+        }
+        
+        .grade-badges-container {
+            display: flex;
+            justify-content: center;
+            gap: 10pt;
+            margin: 15pt 0;
+            flex-wrap: wrap;
+        }
+        
+        .grade-badge.large {
+            font-size: 11pt;
+            padding: 5pt 12pt;
+            background: linear-gradient(135deg, #003366 0%, #0066cc 100%);
+        }
+        
+        .grade-badge.licenciatura {
+            background: #2f855a;
+        }
+        
+        .grade-badge.ba {
+            background: #2c5282;
+        }
+        
+        .grade-badge.geral {
+            background: #003366;
+        }
+        
+        .path-choice {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20pt;
+            margin: 20pt 0;
+        }
+        
+        .path-option {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 15pt;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
+        }
+        
+        .path-option.recommended {
+            border: 3px solid #2f855a;
+            background: #f0fff4;
+        }
+        
+        .path-option h4 {
+            color: #003366;
+            margin-bottom: 8pt;
+            font-size: 11pt;
+        }
+        
+        .path-option .semester-list {
+            font-size: 9.5pt;
+            color: #555;
+            margin-bottom: 8pt;
+            text-align: left;
+        }
+        
+        .recommended-badge {
+            background: #2f855a;
+            color: white;
+            padding: 4pt 10pt;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: bold;
+            margin-bottom: 10pt;
+            display: inline-block;
+        }
+        
+        .teaching-approach {
+            background: #fffaf0;
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            padding: 15pt;
+            margin: 15pt 0;
+            font-style: italic;
+        }
+        
+        @media print {
+            body { padding: 5mm; }
+            .work-card { page-break-inside: avoid; }
+        }
+
+        ol.dotted {
+          list-style: none;
+          counter-reset: item;
+          margin-left: 0;
+        }
+
+        ol.dotted li {
+          display: block;
+          position: relative;
+          margin-bottom: 5px;
+        }
+
+        ol.dotted li::before {
+          content: counters(item, ".") ". ";
+          counter-increment: item;
+          font-weight: bold;
+        }
+
+        ol.dotted li ol {
+          list-style: none;
+          counter-reset: item;
+          padding-left: 20pt;
+          margin-top: 5px;
+        }
+
+        .read-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #003366;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .project-excerpt {
+            background: #e3f2fd;
+            border-left: 5px solid #2196F3;
+            padding: 15pt;
+            margin: 15pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .project-excerpt .source {
+            text-align: right;
+            font-size: 9pt;
+            color: #666;
+            margin-top: 8pt;
+            font-style: italic;
+        }
+        
+        .personal-touch {
+            color: #555;
+            font-size: 10pt;
+            margin: 10pt 0;
+            font-style: italic;
+        }
+        
+        .uspto-portugal {
+            background: linear-gradient(135deg, #f0f7ff 0%, #d4e3ff 100%);
+            border: 2px solid #003366;
+            padding: 15pt;
+            border-radius: 8px;
+            margin: 15pt 0;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dossiê de Candidatura ao EMLDS</h1>
+        <div class="tagline">Para o Prof. Dr. Paulo Roberto Gonçalves-Segundo</div>
+        <div class="context">
+            Preparado por: Ariane Lesnyak Castelló | Janeiro 2026<br>
+            Contexto: Candidatura ao <a href="https://emlds.fcsh.unl.pt/" target="_blank;" style="color: #003366; font-weight: bold;">Erasmus Mundus em Language Data Science (EMLDS)</a>
+        </div>
+    </div>
+
+    <div class="intro-box">
+        <p><strong>Professor Paulo,</strong></p>
+        <p style="text-align:justify;">Este dossiê é um pedido de carta de recomendação, mas também uma reapresentação, contextualização e atualização sobre o que fiz com a base que você me ajudou a construir na graduação em Letras na USP.
+<br><br>
+Embora eu tenha cursado apenas uma disciplina sob sua orientação, a primeira turma de Gramática e Ensino (2019), seu rigor acadêmico, didática e expertise em Análise Crítica do Discurso, Linguística Cognitiva e Linguística Sistêmico-Funcional forneceram ferramentas analíticas valiosas que hoje uso em meu trabalho com dados linguísticos.
+<br><br>
+Depois da graduação, venho aplicando sistematicamente esses princípios a problemas reais de processamento de linguagem natural, governança terminológica e avaliação de sistemas automatizados — e descobri que a realidade inescapável da IA trouxe de volta todas as discussões que tínhamos em sala sobre análise do funcionamento da língua em contraposição à aplicação mecânica de normas. Só que agora os "alunos" são grades sistemas de linguagem gerativa, e os "textos" são milhões de dados. Enxergar isso me fez querer voltar à academia para formalizar minha experiência empírica com o rigor de um mestrado internacional.
+<br><br>
+O EMLDS é a chance de fazer a ponte entre essas áreas, e sua recomendação, também como paraninfo da turma de Letras 2019, seria o aval de que minha trajetória faz sentido, mesmo sendo um tanto fora da curva.
+ 
+<br><br>
+Assim, preparei este documento, que apresenta minha trajetória acadêmica e profissional, demonstrando como os conceitos discutidos em sua disciplina e em outras oferecidas pelo DLCV e pelo DLM fundamentam minha atuação na intersecção entre tecnologia e linguística.</p>
+
+
+
+
+   </div>
+
+    <section id="toc">
+        <div class="toc">
+            <h3>ÍNDICE DO DOCUMENTO</h3>
+            <p>Para facilitar sua navegação:</p><br>
+            <ol class="dotted" style="color: #003366;">
+                <li><a href="#programa">O Programa EMLDS: Estrutura e Plano de Estudos</a></li>
+                <li><a href="#trajetoria">Trajetória Acadêmica-Profissional</a></li>
+                <li><a href="#gramatica">Gramática e Ensino: da Teoria à Prática</a></li>
+                <li><a href="#casos">Casos de Estudo: Análise Linguística Aplicada</a></li>
+                <li><a href="#conexoes">Conexões com a Equipe do EMLDS</a></li>
+                <li><a href="#documentos">Documentação Anexa</a></li>
+                <li><a href="#pedido">Para a Carta de Recomendação</a></li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="programa">
+        <h2>1. O Programa EMLDS: Estrutura e Plano de Estudos</h2>
+        
+        <div class="emlds-overview">
+            <h3 style="margin-top: 0;">European Master in Language Data Science (EMLDS) 2026-2028</h3>
+            <p><strong>Objetivo:</strong> Formar especialistas que integrem teoria linguística e métodos computacionais para pesquisa em processamento de linguagem natural (NLP), terminologia, bancos de dados lexicais e IA ética.</p>
+            <p><strong>Estrutura confirmada (120 ECTS):</strong></p>
+            <ul>
+                <li><strong>Semestre 1:</strong> NOVA FCSH (Lisboa) <strong>ou</strong> Università Cattolica (Milão)</li>
+                <li><strong>Semestres 2 e 3:</strong> Universidad Zaragoza (Espanha)</li>
+                <li><strong>Semestre 4:</strong> Dissertação, estágio ou projeto na universidade de escolha do/a pesquisador/a</li>
+            </ul>
+        </div>
+        
+        <div class="path-choice">
+            <div class="path-option recommended">
+                <div class="recommended-badge">MEU PLANO</div>
+                <h4>Lisboa → Zaragoza → Itália</h4>
+                <div class="semester-list">
+                    • Semestre 1: NOVA FCSH<br>
+                    • Semestres 2-3: Universidad Zaragoza<br>
+                    • Semestre 4: Università Cattolica (estágio)
+                </div>
+                <p style="font-size: 9.5pt; text-align:justify;"><strong>Vantagens:</strong> adaptação cultural e foco em lexigografia, curadoria de dados e teorias terminológicas; carga horária reduzida no primeiro semestre (3 aulas/semana) para reforço em programação; garantia de experiência nos três países.</p>
+            </div>
+            
+            <div class="path-option" style="background-color:#deedfe;">
+ <div class="recommended-badge" style="background-color:#159eff">OPÇÃO B</div>               <h4>Itália → Zaragoza → Lisboa</h4>
+                <div class="semester-list">
+                    • Semestre 1: Università Cattolica<br>
+                    • Semestres 2-3: Universidad Zaragoza<br>
+                    • Semestre 4: NOVA FCSH (estágio)
+                </div>
+                <p style="font-size: 9.5pt; text-align:justify;"><strong>Considerações:</strong> maior desafio técnico desde o início, com o foco em programação (ciência e linguítica computacional + métodos de anotação de dados; adaptação cultural mais complexa; possível perda de sinergia com suas conexões acadêmicas em Portugal.</p>
+            </div>
+        </div>
+        
+        <div class="note-box critical">
+            <p><strong>Análise estratégica:</strong></p>
+            <p style="text-align:justify;">A <strong>Opção A</strong> se alinhae melhor com meu perfil atual: permite fortalecer competências técnicas enquanto se beneficia da proximidade cultural com Portugal. Seu período como professor visitante na Universidade do Porto (2022-2023) constitui um valioso ponto de conexão com o sistema acadêmico português.</p>
+  <br>          <p style="text-align:justify;">A sequência Lisboa-Zaragoza-Itália assegura exposição às três universidades parceiras, com a fase técnica mais intensa posicionada após consolidação da base conceitual.</p>
+        </div>
+    </section>
+
+    <section id="trajetoria">
+        <h2>2. Trajetória Acadêmica-Profissional</h2>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2007–2009</div>
+                <div class="timeline-content">
+                    <strong>Graduação em Tecnologia da Informação | Faculdade Marechal Rondon</strong><br><br>
+<center>
+<div class="grade-badge large geral">MÉDIA GERAL: 8,7/10</div></center>
+                    Base técnica em programação, bancos de dados e estruturas de dados, fundamento para trabalhar com processamento computacional de linguagem.
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2015–2019</div>
+                <div class="timeline-content">
+                    <strong>Bacharelado e Licenciatura em Letras Português/Inglês| Universidade de São Paulo</strong>
+                    <div class="grade-badges-container">
+                        <div class="grade-badge large geral">MÉDIA GERAL: 9,1/10</div>
+                        <div class="grade-badge large licenciatura">LICENCIATURA: 10/10</div>
+                        <div class="grade-badge large ba">BACHARELADO: 8,9/10</div>
+                    </div>
+                    Formação abrangente em linguística, literatura e estudos tradutológicos.<br>
+                    <strong>Disciplina sob sua orientação:</strong><br>
+                    <ul>
+                        <li style="margin-left:20px;">FLC1465 - Gramática e Ensino (2018) - Nota: 10/10</li>
+                    </ul>
+                                </div>
+            </div>
+          
+
+<div class="timeline-item">
+                <div class="timeline-date">2019</div>
+                <div class="timeline-content"><strong>Paraninfo</strong><br>Sua aceitação como paraninfo da turma constitui reconhecimento institucional de nosso vínculo acadêmico.
+ </div></div>
+              
+            <div class="timeline-item">
+                <div class="timeline-date">2020–2025</div>
+                <div class="timeline-content">
+                    <strong>Aplicação Profissional de Conceitos Linguísticos</strong><br>
+                    Período de aplicação sistemática de princípios da análise linguística a contextos corporativos e tecnológicos:<br><br>
+                    <ul>
+
+<li style="margin-left:25px;">Análise de decisões linguísticas em sistemas automatizados</li>
+<li style="margin-left:25px;">Governança terminológica com atenção à variação e adequação contextual</li>
+<li style="margin-left:25px;">Avaliação de viés linguístico em <i>outputs</i> de IA</li>
+<li style="margin-left:25px;">Mediação entre normas técnicas e uso efetivo da língua</li>
+                    </ul>
+                    
+               </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-date">2026 (objetivo)</div>
+                <div class="timeline-content">
+                    <strong>EMLDS — Consolidação Acadêmica</strong><br>
+                    <p style="text-align: center; margin-top: 8pt;">
+                        <span class="highlight">Teoria Linguística (USP) + Métodos Computacionais (TI) + Experiência Aplicada<br>=<br>Language Data Science</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note-box" style="text-align: justify;">
+            <strong>Coerência da trajetória:</strong> esta não é uma mudança de rumo, mas uma <span class="highlight">evolução sistemática de competências desenvolvidas ao longo da minha carreira</span>. Meu perfil híbrido é exatamente o que o comitê de admissão busca. <br> Alám disso, diante da urgência do tema de interesse, minha experiência profissional – que soma +10 anos, os últimos cinco justamente nessa convergência –, pode agregar muito às discussões atuais, principalmente considerando o <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai">AI Act</a> e minha perspectiva do Sul Global.</div>
+    </section>
+
+ 
+
+   <section id="gramatica">
+        <h2>3. Gramática e Ensino: da Teoria à Prática</h2>
+        
+        <div class="note-box critical">
+              <p style="text-align:justify;"><strong>Prof. Paulo</strong>, <br>Lembro que em sala frequentemente utilizávamos exemplos da cultura contemporânea, incluindo memes, para discutir vozes verbais, relações intersentenciais e construção de sentido. Essa abordagem, que privilegiava a análise do funcionamento linguístico sobre a mera aplicação de normas, se mostrou extraordinariamente relevante para minha atuação profissional.</p>
+        </div>
+        
+        <div class="work-card">
+            <div class="work-header">
+                <div class="work-title">FLC1465 - Gramática e Ensino</div>
+                <div class="work-date">2019</div>
+            </div>
+            
+            <div class="work-content">
+                <div style="text-align: center; margin-bottom: 10pt;">
+                    <div class="grade-badge">NOTA FINAL: 10/10</div>
+                </div>
+
+  <h3>Comando do projeto final</h3>
+                    
+              <div class="project-excerpt">
+                    
+<img src="https://github.com/alc-etimo/prof_pauloII/blob/main/comando-projeto-modolo-didatico.PNG?raw=true" style="width:100%;height:auto" /> <div class="source">— Ementa do projeto final</div>
+                </div>
+  
+
+
+<h3>Trechos do projeto</h3>
+                                
+                <div class="project-excerpt">
+                    
+
+
+<img src="https://github.com/alc-etimo/prof_pauloII/blob/main/projeto-modulo-didatico-1.PNG?raw=true" style="width:100%;height:auto;">
+<br><br>
+<img src="https://github.com/alc-etimo/prof_pauloII/blob/main/projeto-modulo-didatico-2.PNG?raw=true" style="width:100%;height:auto;">
+<br><br>
+<img src="https://github.com/alc-etimo/prof_pauloII/blob/main/projeto-modulo-didatico-3.PNG?raw=true" style="width:100%;height:auto;">
+<br><br>
+<img src="https://github.com/alc-etimo/prof_pauloII/blob/main/projeto-modulo-didatico-4.PNG?raw=true" style="width:100%;height:auto;">
+
+
+                </div>
+                
+                
+<h3>Síntese da análise do projeto</h3>
+<div class="work-excerpt">
+                   
+
+                    <p style="text-align:justify;">O projeto de módulo didático operacionaliza a <strong>transposição didática do uso da vírgula para o Ensino Fundamental II</strong>, utilizando a <strong>multimodalidade</strong> e o <strong>gênero discursivo tweet</strong> como eixos de análise.<br><br> Por meio de uma <strong>metodologia indutiva</strong>, a proposta promove a reflexividade linguística ao confrontar a norma-padrão com os usos reais em ambiente digital, focando em fenômenos como o <strong>vocativo</strong>, o <strong>aposto</strong> e as <strong>orações coordenadas</strong>. <br><br>Ao tratar o texto não como pretexto, mas como lugar de <strong>produção de sentido</strong>, o trabalho evidencia como as escolhas de pontuação geram efeitos semânticos distintos, integrando a gramática normativa a uma perspectiva descritivo-funcional. <br><br>A ancoragem na BNCC assegura que o ensino da gramática se dê de forma lúdica e tecnológica, <strong>capacitando o aluno a transitar com autonomia entre variantes formais e informais</strong>.
+      </div>
+
+
+<div class="note-box critical" style="text-align:justify;">
+                    <strong>Relevância para o EMLDS:</strong> A <strong>reflexividade linguística</strong> e a análise da gramática como <strong>lugar de produção de sentido</strong>, exercitadas neste projeto sob uma perspectiva descritivo-funcional, constituem o alicerce da minha transição para a Ciência de Dados de Linguagem. Ao transpor o rigor da descrição de fenômenos sintáticos e pontuacionais em gêneros digitais para a modelagem de grandes volumes de dados (LLM), meu objetivo é garantir que a arquitetura dos sistemas de IA capture não apenas a forma superficial, mas os <strong>efeitos de sentido</strong> e a <strong>variação inerentes ao uso real</strong>. Esta intersecção permite que a curadoria de conjuntos de dados e o refinamento de modelos de <i>Natural Language Understanding</i> (NLU) deixem de ser meramente estatísticos para se tornarem linguisticamente motivados e eticamente precisos.
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+
+  <section id="casos">
+        <h2>4. Casos de Estudo: Análise Linguística Aplicada</h2>
+        
+        
+<p><strong>Dois exemplos representativos da aplicação profissional (2020-2025)</strong></p>
+
+
+<br>            <p style="text-align:justify;">Ambos demonstram como conceitos da minha trajetória orientam a solução de problemas em sistemas automatizados.</p></div>
+
+<div class="work-card">
+            <div class="work-header">
+                <div class="work-title">Caso 1: Forma linguística, interpretação e tomada de decisão
+em sistemas de IA: <br>um estudo aplicado de linguagem em uso</div>
+                <div class="work-date">2021-2022</div>
+            </div>
+            <div class="work-content">
+                <p style="color:#003366;font-size:16px;"><strong>Um estudo aplicado de linguagem em uso</strong></p>
+
+<br><p style="text-align:justify;color:#003366;"><strong>
+
+Contexto</strong>: <span style="color:#000;"> investigação da interface entre a sintaxe clássica e o comportamento de modelos de linguagem em cenários de uso real. O foco é entender como a estrutura formal da língua dita a capacidade de interpretação de uma IA.</span></p><br>
+
+<p style="text-align:justify;color:#003366;"><strong>
+
+Problema</strong>: <span style="color:#000;">sistemas de IA frequentemente falham ao processar a linguagem em uso por ignorarem a relação entre a forma gramatical e a intenção comunicativa, resultando em tomadas de decisão que não refletem a realidade semântica do usuário.</span></p><br>
+
+
+<p style="text-align:justify;color:#003366;"><strong>
+Minha atuação</strong>:<span style="color:#000;"> aplicação de uma metodologia indutiva para analisar falhas de processamento. Utilizei conceitos de projeção sintática e papéis temáticos para mapear como pequenas variações na forma linguística alteram drasticamente o <i>output</i> do modelo.</span></p><br>
+
+<p style="text-align:justify;color:#003366;"><strong>
+
+Resultados</strong>:<span style="color:#000;"> demonstração de que a eficácia da IA depende de uma curadoria linguisticamente motivada. O resultado foi um framework de análise que prioriza a reflexividade sobre o dado, reduzindo erros de interpretação em sistemas de tomada de decisão.</span>
+
+<div class="read-link" style="text-align:center;">
+                    <a href="https://alc-etimo.github.io/prof_pauloII/caso-1.html" target="_blank">Acessar análise detalhada →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="work-card">
+            <div class="work-header">
+                <div class="work-title">Caso 2: Fidelidade, padronização e decisões linguísticas:<br>
+contextos de legendagem e localização</div>
+                <div class="work-date">2023-2024</div>
+            </div>
+            <div class="work-content">
+
+
+       <p style="color:#003366;font-size:16px;"><strong>Contextos de legendagem e localização</strong></p>
+<br>
+         <p style="text-align:justify;color:#003366;"><strong>Contexto</strong>: <span style="color:#000;">análise crítica dos processos de localização e legendagem sob a ótica da <strong>lexicologia</strong> e da <strong>sintaxe</strong>, focando em como a tradução de interfaces digitais molda a experiência do usuário.</span></p>
+
+<br><p style="text-align:justify;color:#003366;"><strong>Problema</strong>:<span style="color:#000;"> o conflito entre a necessidade técnica de <strong>padronização</strong> (para facilitar o processamento da máquina) e o dever ético de <strong>fidelidade</strong> à variante linguística e aos <strong>efeitos de sentido</strong> originais do texto.</span></p>
+
+<br><p style="text-align:justify;color:#003366;"><strong>Minha atuação</strong>: <span style="color:#000;"> atuei na <strong>transposição</strong> de conceitos acadêmicos para o ambiente de produção, estabelecendo critérios de escolha léxica fundamentados em ontologias de domínio e no estudo de relações de hiperonímia e hiponímia.</span></p>
+
+<br><p style="text-align:justify;color:#003366;"><strong>Resultados</strong>:<span style="color:#000;"> implementação de um guia de localização que equilibra rigor técnico e naturalidade linguística. O projeto provou que a padronização não precisa sacrificar a riqueza da <strong>variação</strong>, otimizando a escalabilidade global do produto sem perda de sentido.</span></p>
+
+<div class="read-link" style="text-align:center;">
+                    <a href="https://alc-etimo.github.io/prof_pauloII/caso-2.html" target="_blank">Acessar análise detalhada →</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note-box">
+            <p style="text-align:justify;"><strong>Nexo com a formação:</strong> Em ambos os casos, <strong>não se trata de mera "correção de erro"</strong>, mas de análise do funcionamento linguístico e tomada de decisões informadas — exatamente a abordagem que você cultivava em Gramática e Ensino e que pretendo usar ao lidar com corpora linguístico.</p>
+        </div>
+    </section>
+
+    
+
+<section id="conexoes">
+        
+
+
+<h2>5. Conexões com a Equipe do EMLDS</h2>
+  
+
+<p style="text-align:justify;">Minha formação em análise linguística e experiência com dados conectam-me diretamente às linhas de pesquisa do programa:</p>
+      
+        <div class="professor-grid">
+
+<div class="professor-card">
+
+<h4>Profa. Raquel Amaro</h4>
+
+<p style="font-size: 9.5pt; color: #666; margin-bottom: 8pt;">NOVA FCSH | Centro de Linguística (CLUNL)<br>
+
+<a href="https://www.cienciavitae.pt/portal/en/1515-3C52-D88C" target="_blank" style="font-size: 8.5pt; color: #2C5530;">Perfil acadêmico ↗</a></p>
+
+<div class="research">
+<strong>Pesquisa:</strong><br>
+• Linguística Computacional e NLP<br>
+
+• Lexicologia e Lexicografia Computacional<br>
+• Recursos e ferramentas para línguas</div>
+
+<div class="connection">
+<strong>⚡ CONEXÃO ANALÍTICA:</strong><br>
+
+<p style="text-align:justify;">Minha experiência com análise de discurso aplicada a sistemas de NLP complementa sua pesquisa em recursos linguísticos computacionais.</p>
+                </div>
+            </div>
+
+<div class="professor-card">
+<h4>Prof. Jorge Gracia del Río</h4>
+<p style="font-size: 9.5pt; color: #666; margin-bottom: 8pt;">Universidad Zaragoza | I3A Institute<br>
+<a href="https://jogracia.url.ph/web/" target="_blank" style="font-size: 8.5pt; color: #2C5530;">Perfil acadêmico ↗</a></p>
+<div class="research">
+<strong>Pesquisa:</strong><br>
+                   • Dados Linguísticos Conectados<br>
+• Acesso crosslingual à informação<br>
+
+• Grafos de conhecimento multilíngues
+                </div>
+
+
+<div class="connection">
+                    <strong>⚡ CONEXÃO COGNITIVA:</strong><br>
+
+<p style="text-align:justify;">Minha formação em linguística cognitiva fornece base para trabalhar com representações de significado em grafos de conhecimento.</p>
+                </div>
+            </div>
+
+
+
+<div class="professor-card">
+<h4>Profa. Rute Costa</h4>
+<p style="font-size: 9.5pt; color: #666; margin-bottom: 8pt;">NOVA FCSH | Centro de Linguística (CLUNL)<br>
+
+<a href="https://clunl.fcsh.unl.pt/en/team/rute-costa/" target="_blank" style="font-size: 8.5pt; color: #2C5530;">Perfil acadêmico ↗</a></p>
+
+
+<div class="research"><strong>Pesquisa:</strong><br>
+• Terminologia e Ontologias<br>
+• Padrões ISO para dados linguísticos<br>
+• Lexicografia digital</div>
+
+<div class="connection">
+
+<strong>⚡ CONEXÃO DISCURSIVA:</strong><br>
+      
+<p style="text-align:justify;">Minha experiência com governança terminológica considera dimensões discursivas e de poder, complementando sua abordagem normativa.</p>
+                </div>
+            </div>
+            
+          
+
+<div class="professor-card">
+
+<h4>Prof. Marco Passarotti</h4>
+
+         <p style="font-size: 9.5pt; color: #666; margin-bottom: 8pt;">Università Cattolica | CIRCSE Research Centre<br>
+<a href="https://docenti.unicatt.it/ppd2/it/docenti/14144/marco-carlo-passarotti/profilo" target="_blank" style="font-size: 8.5pt; color: #2C5530;">Perfil acadêmico ↗</a>
+</p>
+
+<div class="research">
+<strong>Pesquisa:</strong><br>
+• Anotação linguística em larga escala<br>
+
+• Modelos de Língua (LLMs)<br>
+
+• Projeções arbóreas e parsing</div>
+<div class="connection">
+<strong>⚡ CONEXÃO TEÓRICA:</strong><br>
+<p style="text-align:justify;">Minha formação em linguística teórica me prepara para contribuir com projetos de anotação que considerem nuances discursivas e cognitivas.</p></div>
+</div>
+</div>
+
+</div>
+
+
+<div class="uspto-portugal">
+<p style="color:#003366; font-size:12.5px;"><strong>Prof. Paulo e Portugal:</strong><br> <span style="color:#000;">Seu período como professor visitante na Universidade do Porto (set/2022–fev/2023) demonstra suas conexões acadêmicas com Portugal, país coordenador do EMLDS. Caso selecionada, pretendo aprofundar essa linha de contato acadêmico.</span></p>
+</div>
+
+
+<section id="documentos">
+<h2>6. Documentação Anexa</h2>
+<div class="note-box">
+<p><strong>Documentos disponíveis para sua consulta:</strong></p>
+            
+         <ul>
+
+<li style="margin-left:25px;"><a href="https://github.com/alc-etimo/prof_pauloII/blob/main/historico-escolar-ba-licenciatura-ingles-e-portugues-USP.png?raw=true" target="_blank">Histórico Escolar USP completo</a></li>
+
+<li style="margin-left:25px;"><a href="https://github.com/alc-etimo/prof_pauloII/blob/main/historico-escolar-tecnologia-em-gestao-da-tecnologia-da-informacao-FMR.jpg?raw=true" target="_blank">Histórico Escolar TI completo</a></li>
+
+
+<li style="margin-left:25px;"><a href="https://alc-etimo.github.io/prof_pauloII/cv-ariane-lesnyak-castello.html" target="_blank">Currículo atualizado com experiência profissional</a></li>
+
+
+<li style="margin-left:25px;"><a href="https://alc-etimo.github.io/prof_pauloII/insumos-para-carta-de-recomendacao.html" target="_blank">Documento com modelos e sugestões para a carta</a></li>
+
+<li style="margin-left:25px;">Vídeos que podem ajudar na redação da carta:</li>
+	<ul>
+			<li style="margin-left:35px;">
+				<a href="https://www.youtube.com/watch?v=n1thpoBGXqU" target="_blank" style="color: #003366;">What makes a good college recommendation letter? | Bates College</a></li>
+			<li style="margin-left:35px;">
+				<a href="https://www.youtube.com/watch?v=nDRLs1llh2U" target="_blank" style="color: #003366;">Tips on Letters of Reference | Stanford Graduate School of Business</a></li>
+			<li style="margin-left:35px;">
+				<a href="https://www.youtube.com/watch?v=Zcpwdcvz3KE" target="_blank" style="color: #003366;">Elements of a strong recommendation letter | YouTube College Admissions</a></li>
+                        </ul>
+   </li></ul>     </div>
+    </section>
+
+
+<section id="pedido">
+
+<h2>7. Para a Carta de Recomendação</h2>
+
+<div class="final-argument">
+
+<h3 style="border: none; text-align: center; color: #003366; margin-bottom: 15pt;">Professor Paulo,</h3>
+
+<p style="text-align:justify;">Em 2019, você aceitou ser o paraninfo da nossa turma de Letras, um gesto que guardo com muito carinho como o fechamento de um ciclo fundamental na USP. Hoje, este dossiê representa o meu pedido para que você também faça parte da abertura do próximo: o mestrado <strong>Erasmus Mundus em Language Data Science </strong>(EMLDS).</p>
+
+<p style="text-align:justify;">Embora você tenha sido parte de uma fração pequena da minha graduação, foi uma parte imensamente significativa. Ainda me lembro com nitidez das aulas de Gramática e Ensino às 22h; o cansaço do dia se dissipava quando a luzinha vermelha do seu <i>laser</i> apontava para os <i>slides</i>, me surpreendendo com informações novas e preciosas que mudaram minha forma de enxergar a língua.</p>
+
+
+<p style="text-align:justify;">Este material que apresento não é apenas uma formalidade; é a tradução de como aquela luzinha ainda brilha na minha trajetória. Quis demonstrar, por meio dos casos práticos aqui detalhados, que o <strong>rigor analítico</strong> e a <strong>capacidade de analisar a linguagem em funcionamento</strong> que você cultivou em sala são as competências exatas que uso hoje em sistemas complexos de tecnologia.</p>
+<p style="text-align:justify;">Sua recomendação validará não apenas meu desempenho acadêmico (nota 10/10), mas a solidez de uma formação que me permite transitar entre a Letras e a Ciência de Dados com segurança. Sei que sua expertise não é o foco técnico do EMLDS, mas é o alicerce de análise linguística que o senhor ajudou a construir que me torna capaz de pesquisar com profundidade o processamento de linguagem.</p>
+
+<p style="text-align:justify;">Assim, peço sua carta como um voto de confiança nesta trajetória que integra o rigor da nossa universidade com as ambições da tecnologia global.</p>
+
+<p style="text-align:justify;">Agradeço pela consideração e permaneço à disposição para fornecer quaisquer informações adicionais.</p><br>
+
+<center><em>Atenciosamente,<br>
+<strong>Ariane Lesnyak Castelló</strong></em></center></div>
+</section>
+
+</body>
+
+</html>
