@@ -1,0 +1,899 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo | Ariane Lesnyak Castelló</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --primary-light: #e8f0f8;
+            --accent: #2c5282;
+            --accent-light: #4a90e2;
+            --danger: #c53030;
+            --success: #2f855a;
+            --border: #cbd5e0;
+            --border-light: #e2e8f0;
+            --card: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            font-size: 10.5pt;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #003366;
+            padding-bottom: 20pt;
+            margin-bottom: 25pt;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20pt;
+            border-radius: 8px;
+        }
+        
+        .header h1 {
+            font-size: 22pt;
+            font-weight: bold;
+            color: #003366;
+            margin-bottom: 5pt;
+            text-transform: uppercase;
+            letter-spacing: 1.5pt;
+        }
+        
+        .header .tagline {
+            font-size: 12pt;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 8pt;
+        }
+        
+        .header .contact {
+            font-size: 10pt;
+            color: #666;
+            margin-top: 10pt;
+        }
+        
+        section {
+            margin-bottom: 25pt;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 5pt;
+            margin-bottom: 15pt;
+            text-transform: uppercase;
+            letter-spacing: 0.8pt;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #003366;
+            margin-top: 15pt;
+            margin-bottom: 8pt;
+            border-left: 4px solid #003366;
+            padding-left: 8pt;
+        }
+        
+        .highlight {
+            color: #003366;
+            font-weight: 700;
+        }
+        
+        .card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15pt;
+            margin: 12pt 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8pt;
+        }
+        
+        .card-title {
+            font-weight: bold;
+            color: #003366;
+            font-size: 11.5pt;
+        }
+        
+        .card-subtitle {
+            color: #666;
+            font-size: 10pt;
+            font-style: italic;
+        }
+        
+        .card-date {
+            color: #888;
+            font-size: 9.5pt;
+            white-space: nowrap;
+        }
+        
+        .card-content {
+            font-size: 10pt;
+            line-height: 1.7;
+        }
+        
+        ul {
+            margin-left: 20pt;
+            margin-top: 8pt;
+        }
+        
+        li {
+            margin-bottom: 6pt;
+            text-align: justify;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #003366;
+            padding: 2pt 6pt;
+            border-radius: 3px;
+            font-size: 9pt;
+            font-weight: 600;
+            margin-right: 4pt;
+            margin-bottom: 4pt;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15pt;
+            margin: 15pt 0;
+        }
+        
+        .education-item, .skills-category {
+            background: #f8f9fa;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 12pt;
+        }
+        
+        .grade-badge {
+            display: inline-block;
+            background: #003366;
+            color: white;
+            padding: 3pt 8pt;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            font-weight: bold;
+            margin-top: 5pt;
+        }
+        
+        .grade-badge.ti {
+            background: #2c5282;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #003366, hsl(215, 50%, 35%));
+            color: white;
+            padding: 15pt;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20pt 0;
+        }
+        
+        .quote-box p {
+            font-size: 11pt;
+            font-weight: 500;
+            font-style: italic;
+            opacity: 0.95;
+            text-align: center;
+            margin-bottom: 8pt;
+        }
+        
+        .quote-box .source {
+            font-size: 9pt;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-style: normal;
+        }
+        
+        .note-box {
+            background: #fff8e1;
+            border-left: 5px solid #ffc107;
+            padding: 12pt;
+            margin: 15pt 0;
+            font-size: 10pt;
+            border-radius: 4px;
+        }
+        
+        .note-box.critical {
+            background: #e3f2fd;
+            border-left-color: #003366;
+        }
+        
+        @media print {
+            body { padding: 5mm; }
+            .card { page-break-inside: avoid; }
+        }
+        
+        .grammar-focus {
+            background: #f0f7ff;
+            border-left: 4px solid #003366;
+            padding: 12pt;
+            margin: 10pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .linguistics-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10pt;
+            margin: 15pt 0;
+        }
+        
+        .pillar {
+            background: white;
+            border: 2px solid #003366;
+            border-radius: 8px;
+            padding: 12pt;
+            text-align: center;
+        }
+        
+        .pillar h4 {
+            color: #003366;
+            font-size: 10.5pt;
+            margin-bottom: 6pt;
+        }
+        
+        .pillar p {
+            font-size: 9.5pt;
+            color: #555;
+        }
+        
+        .timeline-mini {
+            margin: 10pt 0;
+            position: relative;
+            padding-left: 25pt;
+        }
+        
+        .timeline-mini::before {
+            content: '';
+            position: absolute;
+            left: 10pt;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #003366;
+        }
+        
+        .timeline-item-mini {
+            position: relative;
+            margin-bottom: 20pt;
+        }
+        
+        .timeline-item-mini::before {
+            content: '';
+            position: absolute;
+            left: -18pt;
+            top: 5pt;
+            width: 10px;
+            height: 10px;
+            background: #003366;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        
+        .timeline-date-mini {
+            font-weight: bold;
+            color: #003366;
+            font-size: 10pt;
+            margin-bottom: 4pt;
+        }
+        
+        .timeline-content-mini {
+            font-size: 9.5pt;
+            line-height: 1.5;
+        }
+        
+        .timeline-content-mini a {
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .timeline-content-mini a:hover {
+            text-decoration: underline;
+        }
+        
+        .timeline-bullets {
+            margin-left: 15pt;
+            margin-top: 6pt;
+        }
+        
+        .timeline-bullets li {
+            font-size: 9.5pt;
+            margin-bottom: 4pt;
+            color: #555;
+        }
+        
+        .language-charts {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15pt;
+            margin: 20pt 0;
+        }
+        
+        .language-chart-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+        }
+        
+        .pie-chart {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: relative;
+            margin-bottom: 8pt;
+        }
+        
+        .language-label {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #003366;
+            text-align: center;
+            margin-top: 4pt;
+        }
+        
+        .language-level {
+            font-size: 8.5pt;
+            color: #666;
+            text-align: center;
+        }
+        
+        .skills-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8pt;
+            margin: 15pt 0;
+        }
+        
+        .skills-column {
+            vertical-align: top;
+        }
+        
+        .skills-column h3 {
+            margin-top: 0;
+            margin-bottom: 12pt;
+            font-size: 11.5pt;
+            text-align: center;
+            background: #003366;
+            color: white;
+            padding: 8pt;
+            border-radius: 6px;
+        }
+        
+        .skill-item {
+            background: white;
+            border: 2px solid;
+            border-radius: 8px;
+            padding: 10pt;
+            margin-bottom: 8pt;
+            font-size: 10pt;
+  text-align: center;            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .skill-item.linguistics {
+            border-color: #003366;
+            background: #e8f0f8;
+        }
+        
+        .skill-item.technology {
+            border-color: #2c5282;
+            background: #ebf5ff;
+        }
+        
+        .skill-item.soft {
+            border-color: #4a90e2;
+            background: #f0f7ff;
+        }
+        
+        .case-link {
+            color: #2c5282;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .case-link:hover {
+            text-decoration: underline;
+        }
+        
+        .linguistics-keyword {
+            color: #003366;
+            font-weight: 700;
+            background: #e8f0f8;
+            padding: 1pt 4pt;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Ariane Lesnyak Castelló</h1>
+        <div class="tagline">Análise Linguística Aplicada a Dados e Sistemas <span style="font-size:12.5px;"><br>Candidata ao EMLDS | Foco: Gramática Descritiva, Decisões Linguísticas em IA e Variação em Sistemas Automatizados</span></div>
+        <div class="contact">
+São Paulo, SP |
+ +55 11 98765-4321 | <a href="https://www.linkedin.com/in/arianelesnyak/" target="_blank">LinkedIn</a> | <a href="mailto:ariane.castello@alumni.usp.br">ariane.castello@alumni.usp.br</a></div>
+    </div>
+
+    <section id="summary">
+        <h2>PERFIL PROFISSIONAL E ACADÊMICO</h2>
+        <div class="card">
+            <div class="card-content">
+                <p style="text-align:justify;">Profissional com formação dupla em <span class="highlight">Linguística (USP)</span> e <span class="highlight">Tecnologia da Informação</span>, atuando na interface entre análise linguística teórica e aplicação prática em sistemas automatizados. Especializada em:</p>
+                
+                <div class="linguistics-pillars">
+                    <div class="pillar">
+                        <h4>Análise Gramatical Aplicada</h4>
+                        <p>Análise de estruturas linguísticas em uso real, distinção entre variação sistemática e erro normativo</p>
+                    </div>
+                    <div class="pillar">
+                        <h4>Decisões Linguísticas em IA</h4>
+                        <p>Avaliação de <i>outputs</i> de sistemas de linguagem, identificação de viés, adequação contextual</p>
+                    </div>
+                    <div class="pillar">
+                        <h4>Governança Terminológica</h4>
+                        <p>Criação e gestão de vocabulários controlados, considerando variação e uso em contextos institucionais</p>
+                    </div>
+                </div>
+                
+                <p style="text-align:justify; margin-top: 15pt;">Entre 2020 e 2025, apliquei sistematicamente conceitos da análise linguística, especialmente os discutidos em <span class="highlight">Gramática e Ensino (USP, 2019)</span>, a problemas reais de mercado, desenvolvendo protocolos analíticos para avaliar e melhorar sistemas de processamento de linguagem.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>EXPERIÊNCIA PROFISSIONAL</h2>
+        
+     
+
+
+  <div class="timeline-mini">
+  
+
+          <div class="timeline-item-mini">
+ 
+              <div class="timeline-item-mini">
+                <div class="timeline-date-mini">2025–Presente</div>
+ 
+               <div class="timeline-content-mini">
+   
+                 <strong><a href="https://monisaenterprise.com/" target="_blank"><u>MoniSa Enterprise</u></a> • Tecnologia e Treinamento de IA Training</strong><br>
+                
+   <div class="timeline-bullets">
+                        <ul>
+                        
+    <li>Treinamento de IA Training, <span class="linguistics-keyword">anotação de dados</span> e preparação de conjuntos de dados linguísticos</li>
+               
+ <li>Análise de <span class="linguistics-keyword">estruturas sintáticas</span> para treinamento de modelos de NLP</li>
+                 
+           <li>Validação de resultados de sistemas de processamento de linguagem natural</li>
+        
+ <li>Desenvolvimento de protocolos para avaliação de <span class="linguistics-keyword">qualidade linguística</span> em IA</li>
+                        </ul>
+          
+          </div>
+   
+             </div>
+       
+     </div>
+            
+    
+
+         <div class="timeline-item-mini">
+  
+              <div class="timeline-date-mini">2022–Presente</div>
+
+                <div class="timeline-content-mini">
+     
+               <strong><a href="https://www.acclaro.com/" target="_blank"><u>Acclaro</u></a> • Localização e Controle de Qualidade Linguístico</strong><br>
+             
+       <div class="timeline-bullets">
+                        <ul>
+                    
+        <li><span class="linguistics-keyword">Anotação de dados</span> e <span class="linguistics-keyword">metadados</span> para treinamento de modelos de linguagem</li>
+                       
+     <li>Localização de software com foco em adequação contextual e <span class="linguistics-keyword">pragmática</span> intercultural</li>
+  
+                          <li>Análise de qualidade em projetos de tradução audiovisual</li>
+  
+      <li>Anotação linguística para conjuntos de dados de NLP com foco em <span class="linguistics-keyword">sintaxe</span> e <span class="linguistics-keyword">semântica</span></li>
+
+                        </ul>
+                    </div>
+          
+      </div>
+          
+  </div>
+            
+    
+        <div class="timeline-item-mini">
+ 
+               <div class="timeline-date-mini">2021–Presente</div>
+ 
+               <div class="timeline-content-mini">
+   
+                 <strong><a href="https://voxmundi.com.br/" target="_blank"><u>VOX MUNDI</u></a> • Localização e Acessibilidade</strong><br>
+   
+                 <div class="timeline-bullets">
+  
+                      <ul>
+            
+                <li>Controle de Qualidade Linguística para projetos de localização</li>
+               
+ <li>Legendagem, revisão e transcrição com análise de <span class="linguistics-keyword">adequação contextual</span></li>
+  
+                          <li>Marcação de tempo (<i>spotting</i>) e sincronização linguística</li>
+         
+
+                   <li>Avaliação de <span class="linguistics-keyword">variação dialetal</span> em conteúdos audiovisuais</li>
+                        </ul>
+                  
+  </div>
+            
+    </div>
+            </div>
+            
+    
+
+        <div class="timeline-item-mini">
+
+                <div class="timeline-date-mini">2020–Presente</div>
+   
+             <div class="timeline-content-mini">
+  
+                  <strong><a href="https://www.moshimedia.com.br" target="_blank"><u>Moshi Media</u></a> • Produção Audiovisual</strong><br>
+ 
+                   <div class="timeline-bullets">
+      
+                  <ul>
+                            <li>Controle de qualidade de legendagem e análise de <span class="linguistics-keyword">coesão textual</span> em conteúdos localizados</li>
+   
+<li><i>Close captions</i> com foco em <span class="linguistics-keyword">acessibilidade linguística</span></li>
+       
+   <li>Marcação de tempo (<i>spotting</i>) e revisão de sincronia áudio-texto</li>
+               <li>Avaliação de <span class="linguistics-keyword">adequação pragmática</span> em diálogos localizados</li>
+           
+             </ul>
+          
+          </div>
+                </div>
+         
+   </div>
+            
+ 
+
+                  
+  <div class="timeline-item-mini">
+ 
+               <div class="timeline-date-mini">2020–2025</div>
+   
+             <div class="timeline-content-mini">
+                    <strong><a href="https://www.teamworker.com.br" target="_blank"><u>TeamWorker</u></a> • Linguística e Arquitetura da Informação</strong><br>
+              
+      <div class="timeline-bullets">
+  
+                      <ul>
+           
+                 <li>Análise de dados textuais de avaliações de desempenho</li>
+  
+                          <li>Identificação de <span class="linguistics-keyword">padrões linguísticos</span> em <i>feedbacks</i> e comunicações internas</li>
+    
+                        <li>Desenvolvimento de categorias analíticas para avaliação qualitativa baseada em <span class="linguistics-keyword">análise do discurso</span></li>
+ 
+                           <li>Mapeamento de <span class="linguistics-keyword">variação estilística</span> em comunicações corporativas</li>
+     
+                   </ul>
+                    </div>
+         
+       </div>
+       
+     </div>
+  
+
+
+<div class="timeline-item-mini">
+<div class="timeline-date-mini">2015–presente</div>
+  
+              <div class="timeline-content-mini">
+        
+            <strong><a href="https://www.proz.com/profile/2872358"><u>Analista de Linguística Aplicada e Tradutora</u></a> • Consultorias e projetos independentes</strong><br>
+                 
+
+   <div class="timeline-bullets">
+                        <ul>
+                       
+
+     <li>Análise de decisões linguísticas em sistemas de IA: avaliação de resultados de <i>chatbots</i> e modelos de linguagem, identificando onde sistemas confundem <span class="linguistics-keyword">variação</span> com erro</li>
+                          
+
+  <li>Governança terminológica contextual: desenvolvimento de vocabulários controlados considerando <span class="linguistics-keyword">variação</span> de uso e adequação pragmática em diferentes registros</li>
+ 
+  
+<li>Protocolos de análise linguística: criação de metodologias para avaliar qualidade linguística em sistemas automatizados, baseadas em princípios de análise descritiva (não prescritiva)</li>
+         
+                   <li>Mediação entre normas técnicas e uso real: tradução de critérios normativos abstratos em diretrizes aplicáveis a dados textuais reais</li>
+   
+                     </ul>
+                
+    </div>
+           
+     </div>
+           
+ </div>
+            
+    
+     </div>
+    
+</section>
+
+   
+
+ <section id="education">
+        <h2>FORMAÇÃO ACADÊMICA</h2>
+        
+        <div class="grid-2">
+            <div class="education-item">
+                <h3 style="margin-top: 5pt;">Bacharelado e Licenciatura em Letras</h3>
+                <div class="card-subtitle">Português & Inglês | Universidade de São Paulo (USP)</div>
+                <div class="card-date">2015–2019</div>
+                <div class="grade-badge">BACHARELADO: 8,9/10</div>
+                <div class="grade-badge" style="background: #2f855a; margin-left: 5pt;">LICENCIATURA: 10/10</div>
+                
+                <div class="grammar-focus">
+                    <strong>Foco em análise linguística:</strong>
+                    <ul style="margin-top: 5pt; font-size: 9.5pt;">
+                        <li>Gramática e Ensino</li>
+                        <li>Análise do Discurso, Linguística Textual</li>
+                        <li>Variação Linguística, Sociolinguística</li>
+                        <li>Sintaxe, Morfologia do Português</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <h3 style="margin-top: 5pt;">Tecnologia em Gestão da TI</h3>
+                <div class="card-subtitle">Faculdade Marechal Rondon (FMR)</div>
+                <div class="card-date">2007–2009</div>
+                <div class="grade-badge ti" style="margin-left:75px;">MÉDIA GERAL: 8,7/10</div>
+                
+                <div class="grammar-focus">
+                    <strong>Competências técnicas aplicáveis:</strong>
+                    <ul style="margin-top: 5pt; font-size: 9.5pt;">
+                        <li>Lógica de programação e algoritmos</li>
+                        <li>Bancos de dados e estruturas de dados</li>
+                        <li>Arquitetura de sistemas</li>
+                        <li>Gerenciamento de projetos de TI</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note-box critical">
+            <p style="text-align:justify;"><strong>Trajetória integrada:</strong> a formação dupla permite analisar sistemas de linguagem tanto do ponto de vista do funcionamento linguístico quanto da implementação técnica — competência central para <strong><i>Language Data Science</i></strong>.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>COMPETÊNCIAS E HABILIDADES</h2>
+        
+        <table class="skills-table">
+            <tr>
+                <td class="skills-column" style="width: 33%;">
+                    <h3 style="background: #003366;">Análise Linguística</h3>
+                    <div class="skill-item linguistics">
+                        <strong>Análise Gramatical Aplicada</strong><br>
+                        Distinção entre erro e <span class="linguistics-keyword">variação sistemática</span>
+                    </div>
+                    <div class="skill-item linguistics">
+                        <strong>Variação Linguística</strong><br>
+                        Análise de <span class="linguistics-keyword">dialetos</span> e registros em contextos reais
+                    </div>
+                    <div class="skill-item linguistics">
+                        <strong>Sociolinguística</strong><br>
+                        Estudo da linguagem em sua dimensão social
+                    </div>
+                    <div class="skill-item linguistics">
+                        <strong>Análise do Discurso</strong><br>
+                        Identificação de <span class="linguistics-keyword">padrões discursivos</span> e ideologias
+                    </div>
+                    <div class="skill-item linguistics">
+                        <strong>Pragmática</strong><br>
+                        Análise do uso da linguagem em contexto
+                    </div>
+                    <div class="skill-item linguistics">
+                        <strong>Terminologia</strong><br>
+                        Criação e gestão de vocabulários controlados
+                    </div>
+                    <div class="skill-item linguistics">
+                        <strong>Norma vs. Uso</strong><br>
+                        Mediação entre prescrição e descrição linguística
+                    </div>
+                    <div class="skill-item linguistics">
+                        <strong>Adequação Contextual</strong><br>
+                        Avaliação de <span class="linguistics-keyword">adequação pragmática</span> em diferentes situações
+                    </div>
+                </td>
+                
+                <td class="skills-column" style="width: 33%;">
+                    <h3 style="background: #2c5282;">Tecnologia e Métodos</h3>
+                    <div class="skill-item technology">
+                        <strong>Análise de Dados Textuais</strong><br>
+                        Processamento e análise de corpora linguísticos
+                    </div>
+                    <div class="skill-item technology">
+                        <strong>Governança Terminológica</strong><br>
+                        Gestão de vocabulários em sistemas computacionais
+                    </div>
+                    <div class="skill-item technology">
+                        <strong>Protocolos de Avaliação</strong><br>
+                        Desenvolvimento de metodologias para análise de sistemas
+                    </div>
+                    <div class="skill-item technology">
+                        <strong>Análise de Sistemas de IA</strong><br>
+                        Avaliação de decisões linguísticas em modelos de NLP
+                    </div>
+                    <div class="skill-item technology">
+                        <strong>Bancos de Dados</strong><br>
+                        Estruturação e consulta a bases de dados textuais
+                    </div>
+                    <div class="skill-item technology">
+                        <strong>Lógica Computacional</strong><br>
+                        Raciocínio algorítmico aplicado a problemas linguísticos
+                    </div>
+                    <div class="skill-item technology">
+                        <strong>Metodologia de Pesquisa</strong><br>
+                        Desenvolvimento de protocolos de investigação linguística
+                    </div>
+                    <div class="skill-item technology">
+                        <strong>Documentação Técnica</strong><br>
+                        Elaboração de manuais e especificações técnicas
+                    </div>
+                </td>
+                
+                <td class="skills-column" style="width: 33%;">
+                    <h3 style="background: #4a90e2;">Soft Skills</h3>
+                    <div class="skill-item soft">
+                        <strong>Pensamento Analítico</strong><br>
+                        Capacidade de decompor problemas complexos
+                    </div>
+                    <div class="skill-item soft">
+                        <strong>Resolução de Problemas</strong><br>
+                        Abordagem sistemática para desafios linguístico-técnicos
+                    </div>
+                    <div class="skill-item soft">
+                        <strong>Comunicação Efetiva</strong><br>
+                        Clareza na exposição de conceitos complexos
+                    </div>
+                    <div class="skill-item soft">
+                        <strong>Trabalho em Equipe</strong><br>
+                        Colaboração em projetos multidisciplinares
+                    </div>
+                    <div class="skill-item soft">
+                        <strong>Gestão de Projetos</strong><br>
+                        Planejamento e execução de iniciativas linguísticas
+                    </div>
+                    <div class="skill-item soft">
+                        <strong>Adaptabilidade</strong><br>
+                        Flexibilidade para diferentes contextos e demandas
+                    </div>
+                    <div class="skill-item soft">
+                        <strong>Atenção a Detalhes</strong><br>
+                        Rigor na análise de nuances linguísticas
+                    </div>
+                    <div class="skill-item soft">
+                        <strong>Criatividade</strong><br>
+                        Soluções inovadoras para desafios linguístico-computacionais
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        <div style="margin-top: 25pt;">
+            <h3>Idiomas</h3>
+            
+            <div class="language-charts">
+                <div class="language-chart-item">
+                    <div class="pie-chart" style="background: conic-gradient(#003366 0% 100%, #e0e0e0 100% 100%);"></div>
+                    <div class="language-label">Português</div>
+                    <div class="language-level">Nativo</div>
+                </div>
+                
+                <div class="language-chart-item">
+                    <div class="pie-chart" style="background: conic-gradient(#034f9b 0% 100%, #e0e0e0 100% 100%);"></div>
+                    <div class="language-label">Inglês</div>
+                    <div class="language-level">C2 (Bilíngue)</div>
+                </div>
+                
+                <div class="language-chart-item">
+                    <div class="pie-chart" style="background: conic-gradient(#4a90e2 0% 60%, #e0e0e0 60% 100%);"></div>
+                    <div class="language-label">Libras</div>
+                    <div class="language-level">B2 (Intermediário)</div>
+                </div>
+                
+                <div class="language-chart-item">
+                    <div class="pie-chart" style="background: conic-gradient(#4a90e2 0% 60%, #e0e0e0 60% 100%);"></div>
+                    <div class="language-label">Francês</div>
+                    <div class="language-level">B2 (Intermediário)</div>
+                </div>
+                
+                <div class="language-chart-item">
+                    <div class="pie-chart" style="background: conic-gradient(#90cdf4 0% 30%, #e0e0e0 30% 100%);"></div>
+                    <div class="language-label">Espanhol</div>
+                    <div class="language-level">A2 (Básico)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="emlds">
+        <h2>PROJETO ACADÊMICO: EMLDS</h2>
+        
+        <div class="quote-box">
+            <p>"A experiência prática com análise linguística aplicada a sistemas computacionais será formalizada academicamente no EMLDS. Essa trajetória permite desenvolver métodos que integram linguística descritiva e tecnologia de forma crítica e ética."</p>
+            <div class="source">— Motivação para o Erasmus Mundus em Language Data Science</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-content">
+                <p style="text-align:justify;"><strong>Objetivo com o EMLDS:</strong> consolidar academicamente a experiência prática em análise linguística aplicada a sistemas computacionais, criando metodologias que conectem:</p>
+                
+                <div class="grid-2" style="margin: 5pt 0;">
+                    <div>
+                        <h3>Contribuições esperadas</h3>
+                        <ul style="font-size: 10pt;">
+                            <li>Desenvolvimento de protocolos de avaliação linguística para sistemas de IA baseados em análise descritiva</li>
+                            <li>Criação de métodos para preservar <span class="linguistics-keyword">variação linguística</span> legítima em processos automatizados</li>
+                            <li>Análise crítica de como sistemas computacionais reproduzem relações de poder linguístico</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>Áreas de investigação</h3>
+                        <ul style="font-size: 10pt;">
+                            <li>Análise linguística de decisões em sistemas automatizados</li>
+                            <li>Governança terminológica em contextos de inteligência artificial</li>
+                            <li>Questões éticas no processamento de linguagem natural</li>
+                            <li><span class="linguistics-keyword">Variação linguística</span> e sistemas computacionais</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="note-box">
+                    <p style="text-align:justify;"><strong>Base conceitual:</strong> a experiência profissional (2020-Presente) aplicando princípios da análise linguística a sistemas automatizados fornece base empírica sólida para pesquisa acadêmica no EMLDS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
